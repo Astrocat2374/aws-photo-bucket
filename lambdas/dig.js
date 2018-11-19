@@ -2,7 +2,7 @@
 const AWS = require('aws-sdk')
 const s3 = new AWS.S3();
 
-module.exports.dig = async (event, context, callback) => {
+module.exports.dig = (event, context, callback) => {
       
   var params = {
     Bucket: "treasure-chest-capstone"
@@ -21,7 +21,7 @@ module.exports.dig = async (event, context, callback) => {
         'Access-Control-Allow-Credentials': true
       },
       body: JSON.stringify({
-        message: data,
+        message: data
       }),
     };
     callback(null, response)
