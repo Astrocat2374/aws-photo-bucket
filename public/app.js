@@ -3,7 +3,7 @@ const submit = document.querySelector('#render').addEventListener('click', rende
 function renderResults(){
     axios
     .get(`https://cgq9e5xwrg.execute-api.us-west-2.amazonaws.com/dev/hole`)
-    .then((response).data.message.Contents.map(x => {
+    .then((response.data.data.message.Contents).map(x => {
         console.log(x);
         /*let cardTemplate = `
             <div class = 'card'>

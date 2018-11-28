@@ -4,13 +4,13 @@ const s3 = new AWS.S3();
 
 module.exports.dig = (event, context, callback) => {
       
-  var params = {
+  const params = {
     Bucket: "treasure-chest-capstone"
-  }
+  };
 
   s3.listObjects(params, function(err, data){
     if (err) {
-      console.log(err);
+      console.log(err, err.stack);
     }
       
     console.log('data', data);
